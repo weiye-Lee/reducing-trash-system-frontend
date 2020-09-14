@@ -1,0 +1,4 @@
+/* miniprogram/pages/index/index.wxss */
+button{
+  border: black solid 2px;
+}
