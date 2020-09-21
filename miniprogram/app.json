@@ -1,15 +1,40 @@
 {
   "pages": [
-    "pages/index/index"
- 
+    "pages/index/index",
+    "pages/farmerHomePage/farmerHomePage",
+    "pages/store/store",
+    "pages/my/my"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#DCDCDC",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#1296db",
+    "navigationBarTitleText": "垃圾减量小程序",
+    "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/farmerHomePage/farmerHomePage",
+        "text": "首页",
+        "iconPath": "images/bar/home0.png",
+        "selectedIconPath": "images/bar/home1.png"
+      },
+      {
+        "pagePath": "pages/store/store",
+        "text": "商城",
+        "iconPath": "images/bar/store0.png",
+        "selectedIconPath": "images/bar/store1.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/bar/my0.png",
+        "selectedIconPath": "images/bar/my1.png"
+      }
+    ]
+  }
 }
