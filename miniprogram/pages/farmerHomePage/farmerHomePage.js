@@ -1,4 +1,4 @@
-// miniprogram/pages/index/index.js
+// miniprogram/pages/farmerHomePage/farmerHomePage.js
 Page({
 
   /**
@@ -7,24 +7,6 @@ Page({
   data: {
 
   },
-  bindtest: function () { 
-    wx.request({     
-     url: 'http://localhost:8080/index/userinfo',      
-     data: {        
-     userInfo: {}, 
-     },     
-      method: 'GET',     
-       header: {      
-         'content-type': 'application/json' // 默认值     
-        },  
-           success: function (res) {      
-             console.log(res.data);  
-               },   
-              fail: function (res) {   
-                  console.log(".....fail....."+userUrl);   
-                      }  
-                     }) 
-                      },
 
   /**
    * 生命周期函数--监听页面加载
