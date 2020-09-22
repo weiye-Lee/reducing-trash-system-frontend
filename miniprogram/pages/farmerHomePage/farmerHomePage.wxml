@@ -15,7 +15,7 @@
 <view class="buttons-container">
 	<button class="my-button">投递指南</button>
 	<button class="my-button">兑换商城</button>
-	<button class="my-button">预约上门</button>
+	<button class="my-button" bindtap="gotoFarmerAppoint">预约上门</button>
 	<button class="my-button">排行榜</button>
 </view>
 <view class="show-container">
