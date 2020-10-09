@@ -1,0 +1,24 @@
+<!--miniprogram/pages/farmerAppointment/farmerAppointment.wxml-->
+<view class="my-card">
+<button class="mini-button">地址管理 ></button>
+</view>
+<view class="my-card">
+<button class="mini-button">可回收垃圾   ></button>
+</view>
+<view class="my-card">
+<button class="mini-button">不可回收垃圾 ></button>
+</view>
+<view class="my-card">
+<button class="mini-button">就地处理垃圾 ></button>
+</view>
+<!-- <textarea  auto-height  label="备注" style="margin:20rpx; box-shadow:1px 1px 1px 1px #D3D3D3; border-radius: 30rpx;background:white;width:95%;min-height:130rpx;"/> -->
+<van-field
+    model:value="{{ remark }}"
+    label="备注"
+    type="textarea"
+    autosize
+    border="{{ false }}"
+    style="margin:30rpx 20rpx; box-shadow:1px 1px 1px 1px #D3D3D3; border-radius: 10rpx;"
+  />
+  <van-button class="big-button" size="large" color="#1296db" >提交预约</van-button>
+

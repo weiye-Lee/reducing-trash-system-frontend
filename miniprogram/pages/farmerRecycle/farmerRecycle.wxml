@@ -1,0 +1,82 @@
+<!--miniprogram/pages/farmerRecycle/farmerRecycle.wxml-->
+<view class="container">
+	<view class="left">
+		<van-sidebar active-key="{{ active }}" >
+			<van-sidebar-item title="纸张类" id="0" bindtap='switchNav'/>
+			<van-sidebar-item title="塑料类" id="1" bindtap='switchNav' />
+			<van-sidebar-item title="玻璃类" id="2" bindtap='switchNav' />
+			<van-sidebar-item title="金属类" id="3" bindtap='switchNav' />
+			<van-sidebar-item title="纺织类" id="4" bindtap='switchNav' />
+		</van-sidebar>
+	</view>
+	<view class="right">
+		<view class='type'>
+			<!-- current:当前所在滑块的 index -->
+			<!-- vertical:滑动方向是否为纵向 -->
+			<swiper current='{{currentTab}}' vertical='{{true}}'>
+				<!-- catchtouchmove 阻止弹窗后滚动穿透 -->
+				<swiper-item id="0" catchtouchmove="false">
+					<!-- <block wx:for="{{recycleList}}" wx:key="index"> 
+            <view>
+
+            </view>
+          </block> -->
+					<view>
+						<van-card num="2"  price="5积分" title="纸壳、硬纸板" thumb="{{image}}">
+						<view slot="footer" class="footer">
+							<van-button size="mini"  round>-</van-button>
+              <input style="width:60rpx;background-color:white;margin:10rpx; border:solid black 1rpx;position: relative;top:-10rpx;"></input>斤
+							<van-button size="mini" round>+</van-button>
+						</view>
+					</van-card>
+					<van-card num="2"  price="5积分" title="纸壳、硬纸板" thumb="{{image}}">
+						<view slot="footer" class="footer">
+							<van-button size="mini"  round>-</van-button>
+              <input style="width:60rpx;background-color:white;margin:10rpx; border:solid black 1rpx;position: relative;top:-10rpx;"></input>斤
+							<van-button size="mini" round>+</van-button>
+						</view>
+					</van-card>
+					<van-card num="2"  price="5积分" title="纸壳、硬纸板" thumb="{{image}}">
+						<view slot="footer" class="footer">
+							<van-button size="mini"  round>-</van-button>
+              <input style="width:60rpx;background-color:white;margin:10rpx; border:solid black 1rpx;position: relative;top:-10rpx;"></input>斤
+							<van-button size="mini" round>+</van-button>
+						</view>
+					</van-card>
+					<van-card num="2"  price="5积分" title="纸壳、硬纸板" thumb="{{image}}">
+						<view slot="footer" class="footer">
+							<van-button size="mini"  round>-</van-button>
+              <input style="width:60rpx;background-color:white;margin:10rpx; border:solid black 1rpx;position: relative;top:-10rpx;"></input>斤
+							<van-button size="mini" round>+</van-button>
+						</view>
+					</van-card>
+					<van-card num="2"  price="5积分" title="纸壳、硬纸板" thumb="{{image}}">
+						<view slot="footer" class="footer">
+							<van-button size="mini"  round>-</van-button>
+              <input style="width:60rpx;background-color:white;margin:10rpx; border:solid black 1rpx;position: relative;top:-10rpx;"></input>斤
+							<van-button size="mini" round>+</van-button>
+						</view>
+					</van-card>
+					</view>
+				
+				</swiper-item>
+				<swiper-item id="1" catchtouchmove="false">
+					塑料类
+				</swiper-item>
+				<swiper-item id="2" catchtouchmove="false">
+					玻璃类
+				</swiper-item>
+				<swiper-item id="3" catchtouchmove="false">
+					金属类
+				</swiper-item>
+				<swiper-item id="4" catchtouchmove="false">
+					纺织类
+				</swiper-item>
+			</swiper>
+		</view>
+	</view>
+</view>
+
+<view class="footer-container">
+
+</view>

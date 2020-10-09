@@ -1,0 +1,27 @@
+/* miniprogram/pages/farmerRecycle/farmerRecycle.wxss */
+.container{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.left{
+  width: 20%;
+  height: 100%;
+}
+.right{
+width: 80%;
+height: 100%;
+}
+swiper{
+  height: 500rpx;
+}
+swiper-item{
+  font-size:50rpx;
+}
+.footer{
+  display: flex;
+  flex-direction: row;
+  padding-left:40% ;
+  padding-top: 10rpx;
+  background-color: rgb(250, 250, 250);
+}

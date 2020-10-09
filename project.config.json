@@ -75,6 +75,27 @@
 					"id": -1,
 					"name": "pages/store/store",
 					"pathName": "pages/store/store",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/farmerAppointment/farmerAppointment",
+					"pathName": "pages/farmerAppointment/farmerAppointment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/farmerAddManage/farmerAddManage",
+					"pathName": "pages/farmerAddManage/farmerAddManage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/farmerRecycle/farmerRecycle",
+					"pathName": "pages/farmerRecycle/farmerRecycle",
 					"scene": null
 				}
 			]

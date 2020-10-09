@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo: ''
   },
   doLogin:function(callback = ()=>{}){
     let that = this;
@@ -29,16 +29,16 @@ Page({
                 },
                 success:function(res){
                   console.log("登陆成功");
-                  // res = res.data;
-                  // if(res.result==0){
-                  //   that.globalData.userInfo = res.userInfo;
-                  //   wx.setStorageSync('userInfo', JSON.stringify(res.userInfo));
-                  //   wx.setStorageSync('loginFlag',res.skey);
-                  //   console.log("skey="+res.skey);
-                  //   callback();
-                  // }else{
-                  //   that.showInfo("res.errmsg");
-                  // }
+                  res = res.data;
+                  if(res.result==0){
+                    that.userInfo = res.userInfo;
+                    wx.setStorageSync('userInfo', JSON.stringify(res.userInfo));
+                    wx.setStorageSync('loginFlag',res.skey);
+                    console.log("skey="+res.skey);
+                    // callback();
+                  }else{
+                    that.showInfo("res.errmsg");
+                  }
                 },
                 fail:function(error){
                   //调用服务端登录接口失败

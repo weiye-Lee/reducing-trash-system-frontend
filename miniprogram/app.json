@@ -3,7 +3,10 @@
     "pages/index/index",
     "pages/farmerHomePage/farmerHomePage",
     "pages/store/store",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/farmerAppointment/farmerAppointment",
+    "pages/farmerRecycle/farmerRecycle",
+    "pages/farmerAddManage/farmerAddManage"
   ],
   "window": {
     "backgroundColor": "#DCDCDC",
