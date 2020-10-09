@@ -8,7 +8,7 @@ Page({
 
   },
   test:function() {
-     console.log("新建函数")
+     console.log("新建一个函数")
   },
   bindtest: function () { 
     wx.request({     
