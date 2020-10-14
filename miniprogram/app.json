@@ -1,12 +1,13 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/index/index",
     "pages/farmerHomePage/farmerHomePage",
     "pages/store/store",
     "pages/my/my",
     "pages/farmerAppointment/farmerAppointment",
     "pages/farmerRecycle/farmerRecycle",
-    "pages/farmerAddManage/farmerAddManage"
+    "pages/farmerAddressManage/farmerAddressManage"
   ],
   "window": {
     "backgroundColor": "#DCDCDC",

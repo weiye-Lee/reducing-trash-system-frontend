@@ -7,12 +7,17 @@ Page({
   data: {
 
   },
+  gotoFarmerAppoint:function(){
+wx.navigateTo({
+  url: '../farmerAppointment/farmerAppointment',
+})
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.setStorageSync('token','            96a45160cb1db954294ecc22baba66cc8c2e1bac3023c735ae00877c5b3de0855ca53402b3284a1690309f8c369f1c5e596165042e390f0964ddb2cb3435fb21 ');
   },
 
   /**

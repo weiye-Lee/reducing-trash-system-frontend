@@ -1,5 +1,5 @@
 <!--miniprogram/pages/farmerRecycle/farmerRecycle.wxml-->
-<view class="container">
+<view class="container" style="height:1800rpx;">
 	<view class="left">
 		<van-sidebar active-key="{{ active }}" >
 			<van-sidebar-item title="纸张类" id="0" bindtap='switchNav'/>
