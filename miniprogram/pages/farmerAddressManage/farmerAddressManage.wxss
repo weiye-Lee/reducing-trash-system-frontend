@@ -1,0 +1,6 @@
+/* miniprogram/pages/farmerAddManage/farmerAddManage.wxss */
+.big-button{
+  position: fixed; 
+  bottom: 0; 
+  width:100%;
+}

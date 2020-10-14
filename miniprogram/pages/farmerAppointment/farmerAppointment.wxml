@@ -1,7 +1,15 @@
 <!--miniprogram/pages/farmerAppointment/farmerAppointment.wxml-->
-<view class="my-card">
-<button class="mini-button">地址管理 ></button>
+<view class="my-card" bindtap="gotoFarmerAddressManage">
+<view class="first-row">
+<view class="text"><text>{{name}}\t{{tele}}</text></view>
+<button class="mini-button" bindtap="gotoFarmerAddressManage">地址管理 ></button>
 </view>
+<view  class="text">
+{{address}}
+</view>
+</view>
+
+
 <view class="my-card">
 <button class="mini-button">可回收垃圾   ></button>
 </view>

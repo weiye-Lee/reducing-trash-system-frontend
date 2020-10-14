@@ -1,23 +1,48 @@
-// miniprogram/pages/farmerHomePage/farmerHomePage.js
+// miniprogram/pages/farmerAddManage/farmerAddManage.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+   name:'',
+   tele:'',
+   address:''
+  },
+  //跳转页面
+  gotoAppointment(){
+    wx.navigateTo({
+      url: '../farmerAppointment/farmerAppointment?name='+this.data.name+'&tele='+this.data.tele+'&address='+this.data.address,
+    })
 
   },
-  gotoFarmerAppoint:function(){
-wx.navigateTo({
-  url: '../farmerAppointment/farmerAppointment',
-})
+  // 表单值改变
+  onNameChange(event) {
+    // event.detail 为当前输入的值
+    // console.log(event.detail);
+    this.setData({
+      name: event.detail
+    })
   },
-
+  onTeleChange(event) {
+    // event.detail 为当前输入的值
+    // console.log(event.detail);
+    this.setData({
+      tele: event.detail
+    })
+  },
+  onAddressChange(event) {
+    // event.detail 为当前输入的值
+    // console.log(event.detail);
+    this.setData({
+      address: event.detail
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setStorageSync('token','            96a45160cb1db954294ecc22baba66cc8c2e1bac3023c735ae00877c5b3de0855ca53402b3284a1690309f8c369f1c5e596165042e390f0964ddb2cb3435fb21 ');
+
   },
 
   /**
