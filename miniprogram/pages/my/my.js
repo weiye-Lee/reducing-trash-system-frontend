@@ -17,12 +17,10 @@ Page({
     var myToken = wx.getStorageSync('token');
 <<<<<<< Updated upstream
     myToken = JSON.parse(String(myToken));
-=======
     console.log("1:"+myToken)
     myToken = JSON.parse(myToken);
->>>>>>> Stashed changes
     var that  = this;
-    console.log("2:"+myToken)
+    // console.log("2:"+myToken)
     wx.request({
       url: link,
       header: {

@@ -108,6 +108,13 @@
 					"id": -1,
 					"name": "pages/login/login",
 					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/circle/circle",
+					"pathName": "pages/my/my",
 					"scene": null
 				}
 			]

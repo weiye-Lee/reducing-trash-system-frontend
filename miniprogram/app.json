@@ -7,7 +7,8 @@
     "pages/my/my",
     "pages/farmerAppointment/farmerAppointment",
     "pages/farmerRecycle/farmerRecycle",
-    "pages/farmerAddressManage/farmerAddressManage"
+    "pages/farmerAddressManage/farmerAddressManage",
+    "pages/circle/circle"
   ],
   "window": {
     "backgroundColor": "#DCDCDC",
