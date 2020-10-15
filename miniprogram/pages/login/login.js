@@ -37,7 +37,7 @@ Page({
                 duration: 2000,
               })
             return;
-<<<<<<< HEAD
+
         }
         if (!(/^1[3|4|5|8][0-9]\d{8}$/.test(this.data.phone))) {
             wx.showToast({
@@ -65,8 +65,6 @@ Page({
             smsFlag: false
           });
         }
-=======
-        }
         if (!(/^1[3|4|5|8][0-9]\d{8}$/.test(this.data.phone))) {
             wx.showToast({
                 title: '手机号码输入有误',
@@ -93,7 +91,6 @@ Page({
             smsFlag: false
           });
         }
->>>>>>> reducing-trash-system-frontend
       }.bind(this), 1000);
         //
         var that = this
@@ -104,7 +101,6 @@ Page({
             method: "post",
             header: {
                 'content-type': 'application/json' // 默认值
-<<<<<<< HEAD
               },
               success(res) {
                 if (res.data.code == 200) {
@@ -123,7 +119,6 @@ Page({
                   console.log(res)
               }
           })
-=======
             },
             success(res) {
                 console.log(res)
@@ -136,7 +131,6 @@ Page({
                 console.log(res)
             }
         })
->>>>>>> reducing-trash-system-frontend
     },
     // 登录请求，携带token，
     bindLogin: function () {
