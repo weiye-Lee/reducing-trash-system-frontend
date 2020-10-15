@@ -7,6 +7,9 @@ Page({
   data: {
 
   },
+  test:function() {
+     console.log("新建一个函数")
+  },
   bindtest: function () { 
     wx.request({     
      url: 'http://localhost:8080/index/userinfo',      
