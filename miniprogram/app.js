@@ -6,6 +6,7 @@ App({
     key: 'token',
     success (res) {
       console.log("登录成功")
+      console.log(res)
     },
     fail(res) {
       console.log("登录过期，请重新登录")

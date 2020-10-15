@@ -73,6 +73,7 @@ Page({
           success(res) {
               console.log(res);
                if (res.data.code == 200) {
+                   
                    wx.setStorageSync('token', JSON.stringify(res.header.Authorization))
                }
                else {
