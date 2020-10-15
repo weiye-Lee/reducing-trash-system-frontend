@@ -4,7 +4,7 @@ Page({
     /**
      * 页面的初始数据
      * phone 手机号数据框数据
-     * authCodeToken 用户登录过程中包含验证码的token
+     * authCodeToken 用户登录过程中包含验证码的token uid
      * sm 验证码输入框中内容
      */
     data: {
@@ -41,13 +41,19 @@ Page({
                 'content-type': 'application/json' // 默认值
               },
               success(res) {
-                  console.log(res)
-                  that.setData({
-                      authcodeToken:res.header.Authorization
-                  })
+                if (res.data.code == 200) {
+                    console.log("发送成功")
+                    that.setData({
+                        authcodeToken:res.header.Authorization
+                    })
+                }
+                else {
+                    // 验证码错误
+                    console.log("手机号错误");
+                }
               },
               fail(res) {
-                  console.log("fail")
+                  console.log("服务器错误")
                   console.log(res)
               }
           })
@@ -82,7 +88,7 @@ Page({
                
           },
           fail(res) {
-              console.log("error" + res)
+              console.log("服务器错误" + res)
           }
         })
     },
