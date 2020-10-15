@@ -13,7 +13,7 @@
 		<view class='type'>
 			<!-- current:当前所在滑块的 index -->
 			<!-- vertical:滑动方向是否为纵向 -->
-			<swiper current='{{currentTab}}' vertical='{{true}}'>
+			<swiper current='{{currentTab}}' vertical='{{true}}' style="height:100%">
 				<!-- catchtouchmove 阻止弹窗后滚动穿透 -->
 				<swiper-item id="0" catchtouchmove="false">
 					<!-- <block wx:for="{{recycleList}}" wx:key="index"> 

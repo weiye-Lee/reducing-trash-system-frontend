@@ -20,9 +20,9 @@
     use-button-slot
     bind:change="smOnChange"
   >
-    <van-button slot="button" size="small" type="primary" bindtap="bindSm"
+    <van-button slot="button" size="small" type="primary" bindtap="bindSm"  disabled="{{smsFlag}}" style="color:{{sendColor}};"
     >
-    发送验证码
+    {{sendTime}}
     </van-button>
   </van-field>
 </van-cell-group>

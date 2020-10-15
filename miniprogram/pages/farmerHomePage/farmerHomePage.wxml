@@ -18,6 +18,9 @@
 	<button class="my-button" bindtap="gotoFarmerAppoint">预约上门</button>
 	<button class="my-button">排行榜</button>
 </view>
+<view class="note">
+欢迎您！{{user.user.name}}
+</view>
 <view class="show-container">
 	<view class="show-container-item">
 		<view class="show-text">我的积分</view>
