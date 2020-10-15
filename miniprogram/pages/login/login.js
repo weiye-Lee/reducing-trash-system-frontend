@@ -37,7 +37,6 @@ Page({
                 duration: 2000,
               })
             return;
-<<<<<<< HEAD
         }
         if (!(/^1[3|4|5|8][0-9]\d{8}$/.test(this.data.phone))) {
             wx.showToast({
@@ -65,35 +64,6 @@ Page({
             smsFlag: false
           });
         }
-=======
-        }
-        if (!(/^1[3|4|5|8][0-9]\d{8}$/.test(this.data.phone))) {
-            wx.showToast({
-                title: '手机号码输入有误',
-                icon: 'none',
-                duration: 2000,
-              })
-            return;
-          }
-        //验证码按钮
-         // 60秒后重新获取验证码
-    var inter = setInterval(function() {
-        this.setData({
-          smsFlag: true,
-          sendColor: '#cccccc',
-          sendTime: this.data.snsMsgWait + 's后重发',
-          snsMsgWait: this.data.snsMsgWait - 1
-        });
-        if (this.data.snsMsgWait < 0) {
-          clearInterval(inter)
-          this.setData({
-            sendColor: '#363636',
-            sendTime: '发送验证码',
-            snsMsgWait: 60,
-            smsFlag: false
-          });
-        }
->>>>>>> reducing-trash-system-frontend
       }.bind(this), 1000);
         //
         var that = this
@@ -104,7 +74,6 @@ Page({
             method: "post",
             header: {
                 'content-type': 'application/json' // 默认值
-<<<<<<< HEAD
               },
               success(res) {
                 if (res.data.code == 200) {
@@ -123,20 +92,6 @@ Page({
                   console.log(res)
               }
           })
-=======
-            },
-            success(res) {
-                console.log(res)
-                that.setData({
-                    authcodeToken: res.header.Authorization
-                })
-            },
-            fail(res) {
-                console.log("fail")
-                console.log(res)
-            }
-        })
->>>>>>> reducing-trash-system-frontend
     },
     // 登录请求，携带token，
     bindLogin: function () {
