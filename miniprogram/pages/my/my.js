@@ -12,14 +12,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // wx.setStorageSync('token','a7b45ad346bd01b1ad9798751f3ac59ff5256936e24d8d6fb42c78b8f9ad08a51f8aa76d62977d71bd3cb520800c7e700e9020e2878342c20c5e6139c6b89af7');
-    var link = 'http://localhost:8080/api/user/index';
-    var myToken = wx.getStorageSync('token');
-<<<<<<< Updated upstream
-    myToken = JSON.parse(String(myToken));
-    console.log("1:"+myToken)
-    myToken = JSON.parse(myToken);
     var that  = this;
+    var link = 'http://localhost:8080/api/user/index';
+    var Token = wx.getStorageSync('token');
+    // console.log("1:"+Token)
+    //JSON.parse() 方法用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。
+    var myToken = JSON.parse(String(Token));
     // console.log("2:"+myToken)
     wx.request({
       url: link,
@@ -28,8 +26,8 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res){
-        console.log(myToken)
-        console.log(res.data)
+        // console.log(myToken)
+        // console.log(res.data)
         wx.setStorageSync('user',res.data);
         //正式开发环境从此开始：
         that.setData({
