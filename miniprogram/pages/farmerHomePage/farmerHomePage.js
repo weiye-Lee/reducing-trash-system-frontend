@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    user:null,
   },
   gotoFarmerAppoint:function(){
 wx.navigateTo({
@@ -17,8 +17,34 @@ wx.navigateTo({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setStorageSync('token','            96a45160cb1db954294ecc22baba66cc8c2e1bac3023c735ae00877c5b3de0855ca53402b3284a1690309f8c369f1c5e596165042e390f0964ddb2cb3435fb21 ');
+    var that  = this;
+    var link = 'http://localhost:8080/api/user/index';
+    var Token = wx.getStorageSync('token');
+    // console.log("1:"+Token)
+    //JSON.parse() 方法用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。
+    var myToken = JSON.parse(String(Token));
+    // console.log("2:"+myToken)
+    wx.request({
+      url: link,
+      header: {
+        'Authorization':myToken,
+        'content-type': 'application/json' // 默认值
+      },
+      success(res){
+        // console.log(myToken)
+        // console.log(res.data)
+        wx.setStorageSync('user',res.data);
+        //正式开发环境从此开始：
+        that.setData({
+          user: wx.getStorageSync('user')
+        })
+      },
+      fail(){
+        console.log("fail");
+      }
+    })
   },
+  
 
   /**
    * 生命周期函数--监听页面初次渲染完成
