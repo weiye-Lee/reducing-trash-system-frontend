@@ -1,35 +1,18 @@
-// miniprogram/pages/farmerAppointment/farmerAppointment.js
+// miniprogram/pages/farmerUnRecycle/farmerUnRecycle.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    remark: '',
-    name: '',
-    tele: '',
-    address: ''
-  },
-  gotoFarmerAddressManage() {
-    wx.navigateTo({
-      url: '../farmerAddressManage/farmerAddressManage',
-    })
-  },
-  gotoFarmerRecycle(){
-    wx.navigateTo({
-      url: '../farmerRecycle/farmerRecycle',
-    })
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      name: options.name,
-      tele: options.tele,
-      address: options.address
-    })
+
   },
 
   /**

@@ -8,10 +8,8 @@
 {{address}}
 </view>
 </view>
-
-
-<view class="my-card">
-<button class="mini-button">可回收垃圾   ></button>
+<view class="my-card" bindtap="gotoFarmerRecycle">
+<button class="mini-button" bindtap="gotoFarmerRecycle">可回收垃圾   ></button>
 </view>
 <view class="my-card">
 <button class="mini-button">不可回收垃圾 ></button>

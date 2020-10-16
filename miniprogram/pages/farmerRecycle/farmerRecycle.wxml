@@ -1,8 +1,8 @@
 <!--miniprogram/pages/farmerRecycle/farmerRecycle.wxml-->
-<view class="container" style="height:1800rpx;">
+<view class="container" style="height:1300rpx">
 	<view class="left">
-		<van-sidebar active-key="{{ active }}" >
-			<van-sidebar-item title="纸张类" id="0" bindtap='switchNav'/>
+		<van-sidebar active-key="{{ active }}">
+			<van-sidebar-item title="纸张类" id="0" bindtap='switchNav' />
 			<van-sidebar-item title="塑料类" id="1" bindtap='switchNav' />
 			<van-sidebar-item title="玻璃类" id="2" bindtap='switchNav' />
 			<van-sidebar-item title="金属类" id="3" bindtap='switchNav' />
@@ -22,43 +22,79 @@
             </view>
           </block> -->
 					<view>
-						<van-card num="2"  price="5积分" title="纸壳、硬纸板" thumb="{{image}}">
-						<view slot="footer" class="footer">
-							<van-button size="mini"  round>-</van-button>
-              <input style="width:60rpx;background-color:white;margin:10rpx; border:solid black 1rpx;position: relative;top:-10rpx;"></input>斤
-							<van-button size="mini" round>+</van-button>
+						<view class="garbage-item">
+							<view class="garbage-pic">
+							</view>
+							<view class="garbage-note">
+								<view class="title">
+									纸壳、硬纸板
+								</view>
+								<view class="note">
+									<view class="score">25积分</view>
+									<view class="count">× 2.1斤</view>
+								</view>
+								<view class="footer">
+									<input class="num-input"></input>斤
+									<button bindtap='addTPList' plain="true">
+										<image class="icon" src="../../images/util/add.png"></image>
+									</button>
+									<button bindtap='delTPList' plain="true">
+										<image class="icon" src="../../images/util/subtract.png"></image>
+									</button>
+									<input class="num-input"></input>两
+									<button bindtap='addTPList' plain="true">
+										<image class="icon" src="../../images/util/add.png"></image>
+									</button>
+									<button bindtap='delTPList' plain="true">
+										<image class="icon" src="../../images/util/subtract.png"></image>
+									</button>
+								</view>
+							</view>
+
 						</view>
-					</van-card>
-					<van-card num="2"  price="5积分" title="纸壳、硬纸板" thumb="{{image}}">
-						<view slot="footer" class="footer">
-							<van-button size="mini"  round>-</van-button>
-              <input style="width:60rpx;background-color:white;margin:10rpx; border:solid black 1rpx;position: relative;top:-10rpx;"></input>斤
-							<van-button size="mini" round>+</van-button>
-						</view>
-					</van-card>
-					<van-card num="2"  price="5积分" title="纸壳、硬纸板" thumb="{{image}}">
-						<view slot="footer" class="footer">
-							<van-button size="mini"  round>-</van-button>
-              <input style="width:60rpx;background-color:white;margin:10rpx; border:solid black 1rpx;position: relative;top:-10rpx;"></input>斤
-							<van-button size="mini" round>+</van-button>
-						</view>
-					</van-card>
-					<van-card num="2"  price="5积分" title="纸壳、硬纸板" thumb="{{image}}">
-						<view slot="footer" class="footer">
-							<van-button size="mini"  round>-</van-button>
-              <input style="width:60rpx;background-color:white;margin:10rpx; border:solid black 1rpx;position: relative;top:-10rpx;"></input>斤
-							<van-button size="mini" round>+</van-button>
-						</view>
-					</van-card>
-					<van-card num="2"  price="5积分" title="纸壳、硬纸板" thumb="{{image}}">
-						<view slot="footer" class="footer">
-							<van-button size="mini"  round>-</van-button>
-              <input style="width:60rpx;background-color:white;margin:10rpx; border:solid black 1rpx;position: relative;top:-10rpx;"></input>斤
-							<van-button size="mini" round>+</van-button>
-						</view>
-					</van-card>
+
+
+
+
 					</view>
-				
+					<view>
+						<view class="garbage-item">
+							<view class="garbage-pic">
+							</view>
+							<view class="garbage-note">
+								<view class="title">
+									纸壳、硬纸板
+								</view>
+								<view class="note">
+									<view class="score">25积分</view>
+									<view class="count">× 2.1斤</view>
+								</view>
+								<view class="footer">
+									<input class="num-input"></input>斤
+									<button bindtap='addTPList' plain="true">
+										<image class="icon" src="../../images/util/add.png"></image>
+									</button>
+									<button bindtap='delTPList' plain="true">
+										<image class="icon" src="../../images/util/subtract.png"></image>
+									</button>
+									<input class="num-input"></input>两
+									<button bindtap='addTPList' plain="true">
+										<image class="icon" src="../../images/util/add.png"></image>
+									</button>
+									<button bindtap='delTPList' plain="true">
+										<image class="icon" src="../../images/util/subtract.png"></image>
+									</button>
+								</view>
+							</view>
+
+						</view>
+
+
+
+
+					</view>
+
+
 				</swiper-item>
 				<swiper-item id="1" catchtouchmove="false">
 					塑料类

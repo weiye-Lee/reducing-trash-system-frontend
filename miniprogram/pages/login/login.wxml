@@ -1,5 +1,6 @@
 <!--pages/login/login.wxml-->
-<text>登录</text>
+<!-- <text>登录</text> -->
+<view class="title">手机验证码登录</view>
 <van-cell-group>
  <van-field
     name="phone"
@@ -27,4 +28,3 @@
   </van-field>
 </van-cell-group>
 <van-button type="primary" size="large" bindtap="bindLogin">登录</van-button>
-<button bindtap="click">click</button>

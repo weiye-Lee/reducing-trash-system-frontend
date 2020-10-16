@@ -9,7 +9,41 @@ Page({
   data: {
     active: 0,
     currentTab:0,
-    image:"home0.png"
+    image:"home0.png",
+    recycleGarbage:{
+      paper:[
+        {
+          id:1,
+          name:"纸壳、硬纸板",
+          unit:"斤",
+          picture:null,
+          score:25
+        },
+        {
+          id:2,
+          name:"废旧资料、旧报纸",
+          unit:"斤",
+          picture:null,
+          score:60
+        }
+      ],
+      plastic:[
+        {
+          id:3,
+          name:"废旧塑料制品",
+          unit:"斤",
+          picture:null,
+          score:5
+        },
+        {
+          id:4,
+          name:"饮料瓶",
+          unit:"个",
+          picture:null,
+          score:7
+        }
+      ]
+    }
   },
   
   switchNav: function (e) {
@@ -31,6 +65,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
 
   },
 
