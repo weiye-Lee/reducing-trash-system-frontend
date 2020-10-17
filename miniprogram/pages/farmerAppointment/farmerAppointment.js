@@ -11,7 +11,9 @@ Page({
     tele: '',
     address: '',
     reGarbageChooses:[],
-    reScore:''
+    unReGarbageChooses:[],
+    reScore:'',
+    unReScore:''
   },
   gotoFarmerAddressManage() {
     wx.navigateTo({
@@ -23,8 +25,21 @@ Page({
       url: '../farmerRecycle/farmerRecycle',
     })
   },
+  gotoFarmerUnRecycle(){
+    wx.navigateTo({
+      url: '../farmerUnRecycle/farmerUnRecycle',
+    })
+  },
+  gotoFarmerSoil(){
+    wx.navigateTo({
+      url: '../farmerSoil/farmerSoil',
+    })
+  },
   submit(){
     console.log(this.data.reGarbageChooses);
+    console.log(this.data.unReGarbageChooses);
+    console.log(this.data.soilChooses);
+    
   },
 
   /**
@@ -37,7 +52,12 @@ Page({
       address: app.globalData.faddress,
       reGarbageChooses: app.globalData.reGarbageChooses,
       reScore: app.globalData.reScore,
-      remark: app.globalData.remark
+      unReGarbageChooses:app.globalData.unReGarbageChooses,
+      unReScore:app.globalData.unReScore,
+      soilChooses:app.globalData.soilChooses,
+      soilScore:app.globalData.soilScore,
+      remark: app.globalData.remark,
+
     })
     // if(options.name!=null){
     //   this.setData({
@@ -49,16 +69,16 @@ Page({
     //   app.globalData.tele=options.tele,
     //   app.globalData.address=options.address
     // }
-    if(options.reGarbageChooses!=null){
-      var list =JSON.parse(options.reGarbageChooses)
-      console.log(list);
-      this.setData({
-        reGarbageChooses:list,
-        reScore:options.reScore
-      })
-      app.globalData.reGarbageChooses=list,
-      app.globalData. reScore=options.reScore
-    }
+    // if(options.reGarbageChooses!=null){
+    //   var list =JSON.parse(options.reGarbageChooses)
+    //   console.log(list);
+    //   this.setData({
+    //     reGarbageChooses:list,
+    //     reScore:options.reScore
+    //   })
+    //   app.globalData.reGarbageChooses=list,
+    //   app.globalData. reScore=options.reScore
+    // }
   },
 
   /**

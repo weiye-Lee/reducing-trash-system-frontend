@@ -8,7 +8,8 @@
     "pages/farmerAppointment/farmerAppointment",
     "pages/farmerRecycle/farmerRecycle",
     "pages/farmerAddressManage/farmerAddressManage",
-    "pages/farmerUnRecycle/farmerUnRecycle"
+    "pages/farmerUnRecycle/farmerUnRecycle",
+    "pages/farmerSoil/farmerSoil"
   ],
   "window": {
     "backgroundColor": "#DCDCDC",

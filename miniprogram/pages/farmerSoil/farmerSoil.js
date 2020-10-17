@@ -1,4 +1,4 @@
-// miniprogram/pages/farmerUnRecycle/farmerUnRecycle.js
+// miniprogram/pages/farmerSoil/farmerSoil.js
 var app = getApp()
 Page({
 
@@ -9,8 +9,8 @@ Page({
     active: 0,
     currentTab: 0,
     score: 0.0,
-    unRecycleGarbage: [],
-    unReGarbageChooses: [],
+    soil:[],
+    soilChooses:[],
   },
    /**
    * 垃圾数量的改变,以及对应的积分变化
@@ -20,11 +20,11 @@ Page({
     var that = this;
     var id = event.target.dataset.id;
     var amount = event.target.dataset.name;
-    var index = "unReGarbageChooses[" + id + "]." + amount;
+    var index = "soilChooses[" + id + "]." + amount;
     this.setData({
       [index]: parseFloat(event.detail.value)
     })
-    var t = that.data.unReGarbageChooses;
+    var t = that.data.soilChooses;
     var myScore = 0;
     for (var i = 0; i < t.length; i++) {
       if (t[i] != null) {
@@ -38,12 +38,12 @@ Page({
   addAmount(event) {
     var that = this;
     var id = event.target.dataset.id;
-    var amount = parseFloat(this.data.unReGarbageChooses[id].amount) + 1;
-    var index = "unReGarbageChooses[" + id + "].amount";
+    var amount = parseFloat(this.data.soilChooses[id].amount) + 1;
+    var index = "soilChooses[" + id + "].amount";
     this.setData({
       [index]: amount
     })
-    var t = that.data.unReGarbageChooses;
+    var t = that.data.soilChooses;
     var myScore = 0;
     for (var i = 0; i < t.length; i++) {
       if (t[i] != null) {
@@ -57,12 +57,12 @@ Page({
   delAmount(event) {
     var that = this;
     var id = event.target.dataset.id;
-    var amount = parseFloat(this.data.unReGarbageChooses[id].amount) - 1;
-    var index = "unReGarbageChooses[" + id + "].amount";
+    var amount = parseFloat(this.data.soilChooses[id].amount) - 1;
+    var index = "soilChooses[" + id + "].amount";
     this.setData({
       [index]: amount
     })
-    var t = that.data.unReGarbageChooses;
+    var t = that.data.soilChooses;
     var myScore = 0;
     for (var i = 0; i < t.length; i++) {
       if (t[i] != null) {
@@ -77,8 +77,8 @@ Page({
    * 提交订单
    */
   submit() {
-    console.log(this.data.unReGarbageChooses);
-    app.globalData.unReGarbageChooses = this.data.unReGarbageChooses;
+    console.log(this.data.soilChooses);
+    app.globalData.soilChooses = this.data.soilChooses;
     wx.navigateTo({
       url: '../farmerAppointment/farmerAppointment'
     })  
@@ -101,24 +101,24 @@ Page({
     });
   },
 
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    console.log(app.globalData.unReGarbageChooses);
-    this.setData({
-      unRecycleGarbage:app.globalData.unRecycleGarbage,
-      unReGarbageChooses: app.globalData.unReGarbageChooses,
-      score: app.globalData.unReScore,
-    })
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    console.log(app.globalData.unReGarbageChooses);
+    this.setData({
+      soil:app.globalData.soil,
+      soilChooses: app.globalData.soilChooses,
+      score: app.globalData.soilScore,
+    })
   },
 
   /**

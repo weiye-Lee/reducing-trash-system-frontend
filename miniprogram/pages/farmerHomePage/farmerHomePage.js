@@ -7,7 +7,8 @@ Page({
    */
   data: {
     user: null,
-    garbageChooses:[]
+    garbageChooses:[],
+    unReGarbageChooses:[]
   },
   gotoFarmerAppoint: function () {
     wx.navigateTo({
@@ -49,8 +50,11 @@ Page({
      * 加载垃圾列表
      */
     var link = 'http://localhost:8080/api/user/getRecycleGarbage';
+    var link2 = 'http://localhost:8080/api/user/getUnRecycleGarbage';
+    var link3 = 'http://localhost:8080/api/user/getSoilGarbage';
     var Token = wx.getStorageSync('token');
     var myToken = JSON.parse(String(Token));
+    //请求可回垃圾
     wx.request({
       url: link,
       header: {
@@ -123,7 +127,84 @@ Page({
       fail() {
         console.log("fail");
       }
+    }) 
+    //请求不可回垃圾
+    wx.request({
+      url: link2,
+      header: {
+        'Authorization': myToken,
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        //正式开发环境从此开始：
+        app.globalData.unRecycleGarbage = res.data.data.unRecycleGarbage
+        // that.setData({
+        //   recycleGarbage: res.data.data.recycleGarbage
+        // })
+        var t = res.data.data.unRecycleGarbage;
+        console.log(t);
+        var a = t.metal.length;
+        var b = t.pesticide.length;
+        //制造订单数组
+        for (var i = 0; i < a; i++) {
+          var id = t.metal[i].id;
+          var index = "unReGarbageChooses[" + id + "].garbage";
+          var index2 = "unReGarbageChooses[" + id + "].amount";
+          that.setData({
+            [index]: t.metal[i],
+            [index2]: 0,
+          })
+        }
+        for (var i = 0; i < b; i++) {
+          var id = t.pesticide[i].id;
+          var index = "unReGarbageChooses[" + id + "].garbage";
+          var index2 = "unReGarbageChooses[" + id + "].amount";
+          that.setData({
+            [index]: t.pesticide[i],
+            [index2]: 0,
+          })
+        }
+        app.globalData.unReGarbageChooses = that.data.unReGarbageChooses;
+        // console.log(that.data.unReGarbageChooses);
+      },
+      fail() {
+        console.log("fail");
+      }
     })
+     //请求就地回收垃圾煤渣
+     wx.request({
+      url: link3,
+      header: {
+        'Authorization': myToken,
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        //正式开发环境从此开始：
+        app.globalData.soil = res.data.data.soil
+        // that.setData({
+        //   recycleGarbage: res.data.data.recycleGarbage
+        // })
+        var t = res.data.data.soil;
+        console.log(t);
+        var a = t.soil.length;
+        //制造订单数组
+        for (var i = 0; i < a; i++) {
+          var id = t.soil[i].id;
+          var index = "soilChooses[" + id + "].garbage";
+          var index2 = "soilChooses[" + id + "].amount";
+          that.setData({
+            [index]: t.soil[i],
+            [index2]: 0,
+          })
+        }
+        app.globalData.soilChooses = that.data.soilChooses;
+        // console.log(that.data.unReGarbageChooses);
+      },
+      fail() {
+        console.log("fail");
+      }
+    })
+
 
     //
   },

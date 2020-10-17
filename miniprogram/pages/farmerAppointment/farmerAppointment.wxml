@@ -12,19 +12,35 @@
 	<view class="first-row">
 		<view>
 			<block wx:for="{{reGarbageChooses}}" wx:key="index">
-      	<view class="text" wx:if="{{item.amount!=0&&item!=null}}">{{item.garbage.name}}×{{item.amount}}{{item.garbage.unit}}</view>
-      </block>
-		
+				<view class="text" wx:if="{{item.amount!=0&&item!=null}}">{{item.garbage.name}}×{{item.amount}}{{item.garbage.unit}}</view>
+			</block>
+
 		</view>
-		<button class="mini-button" bindtap="gotoFarmerRecycle">可回收垃圾
+		<button class="mini-button" bindtap="gotoFarmerRecycle">可回收垃圾 >
 		</button>
 	</view>
 </view>
 <view class="my-card">
-	<button class="mini-button">不可回收垃圾 ></button>
+	<view class="first-row">
+		<view>
+			<block wx:for="{{unReGarbageChooses}}" wx:key="index">
+				<view class="text" wx:if="{{item.amount!=0&&item!=null}}">{{item.garbage.name}}×{{item.amount}}{{item.garbage.unit}}</view>
+			</block>
+		</view>
+		<button class="mini-button" bindtap="gotoFarmerUnRecycle">不可回收垃圾 ></button>
+	</view>
+	
 </view>
 <view class="my-card">
-	<button class="mini-button">就地处理垃圾 ></button>
+	<view class="first-row">
+			<view>
+			<block wx:for="{{soilChooses}}" wx:key="index">
+				<view class="text" wx:if="{{item.amount!=0&&item!=null}}">{{item.garbage.name}}×{{item.amount}}{{item.garbage.unit}}</view>
+			</block>
+		</view>
+		<button class="mini-button" bindtap="gotoFarmerSoil">就地处理垃圾 ></button>
+	</view>
+
 </view>
 <!-- <textarea  auto-height  label="备注" style="margin:20rpx; box-shadow:1px 1px 1px 1px #D3D3D3; border-radius: 30rpx;background:white;width:95%;min-height:130rpx;"/> -->
 <van-field model:value="{{ remark }}" label="备注" type="textarea" autosize border="{{ false }}" style="margin:30rpx 20rpx; box-shadow:1px 1px 1px 1px #D3D3D3; border-radius: 10rpx;" />

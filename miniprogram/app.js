@@ -20,7 +20,14 @@ App({
     fname: '',
     ftele: '',
     faddress: '',
+    recycleGarbage:[],
     reGarbageChooses: [],
-    reScore: ''
+    reScore: 0,
+    unRecycleGarbage:[],
+    unReGarbageChooses:[],
+    unReScore:0,
+    soil:[],
+    soilChooses:[],
+    soilScore:0,
   }
 })
