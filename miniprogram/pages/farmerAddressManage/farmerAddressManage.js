@@ -1,4 +1,5 @@
 // miniprogram/pages/farmerAddManage/farmerAddManage.js
+var app = getApp()
 Page({
 
   /**
@@ -11,9 +12,15 @@ Page({
   },
   //跳转页面
   gotoAppointment(){
+    app.globalData.fname = this.data.name
+    app.globalData.ftele = this.data.tele
+    app.globalData.faddress = this.data.address
     wx.navigateTo({
-      url: '../farmerAppointment/farmerAppointment?name='+this.data.name+'&tele='+this.data.tele+'&address='+this.data.address,
+      url: '../farmerAppointment/farmerAppointment'
     })
+    // wx.navigateTo({
+    //   url: '../farmerAppointment/farmerAppointment?name='+this.data.name+'&tele='+this.data.tele+'&address='+this.data.address,
+    // })
 
   },
   // 表单值改变
@@ -42,7 +49,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.setData({
+        name:app.globalData.fname,
+        tele:app.globalData.ftele,
+        address:app.globalData.faddress,
+      })
   },
 
   /**

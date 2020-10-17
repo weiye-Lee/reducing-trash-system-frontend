@@ -1,4 +1,5 @@
 // miniprogram/pages/farmerAppointment/farmerAppointment.js
+var app = getApp()
 Page({
 
   /**
@@ -8,7 +9,9 @@ Page({
     remark: '',
     name: '',
     tele: '',
-    address: ''
+    address: '',
+    reGarbageChooses:[],
+    reScore:''
   },
   gotoFarmerAddressManage() {
     wx.navigateTo({
@@ -20,23 +23,48 @@ Page({
       url: '../farmerRecycle/farmerRecycle',
     })
   },
+  submit(){
+    console.log(this.data.reGarbageChooses);
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.setData({
-      name: options.name,
-      tele: options.tele,
-      address: options.address
+      name: app.globalData.fname,
+      tele: app.globalData.ftele,
+      address: app.globalData.faddress,
+      reGarbageChooses: app.globalData.reGarbageChooses,
+      reScore: app.globalData.reScore,
+      remark: app.globalData.remark
     })
+    // if(options.name!=null){
+    //   this.setData({
+    //     name: options.name,
+    //     tele: options.tele,
+    //     address: options.address
+    //   })
+    //   app.globalData.name=options.name,
+    //   app.globalData.tele=options.tele,
+    //   app.globalData.address=options.address
+    // }
+    if(options.reGarbageChooses!=null){
+      var list =JSON.parse(options.reGarbageChooses)
+      console.log(list);
+      this.setData({
+        reGarbageChooses:list,
+        reScore:options.reScore
+      })
+      app.globalData.reGarbageChooses=list,
+      app.globalData. reScore=options.reScore
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**

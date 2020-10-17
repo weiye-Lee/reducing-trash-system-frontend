@@ -1,4 +1,5 @@
 // pages/login/login.js
+var app = getApp()
 Page({
 
     /**
@@ -14,7 +15,8 @@ Page({
         // 手机验证码
         sendTime: '获取验证码',
         sendColor: '#363636',
-        snsMsgWait: 10
+        snsMsgWait: 10,
+        garbageChooses:[],
     },
     phoneOnChange: function (e) {
         this.setData({

@@ -87,3 +87,26 @@ swiper-item{
   height: 50rpx;
   border: none;
 }
+.footer-container{
+  width: 100%;
+  display: flex;
+  padding: 25rpx;
+  position: fixed;
+  bottom: 0;
+  background-color:rgb(18,150,219);
+}
+.footer-left{
+  width: 65%;
+}
+.footer-score{
+  text-align: center;
+  position: relative;
+  top: 24rpx;
+  font-size: 35rpx;
+  color:white;
+  font-weight:bold;
+  width: 100%;
+}
+.footer-right{
+  width: 35%;
+}
