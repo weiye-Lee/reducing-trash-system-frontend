@@ -71,13 +71,13 @@ Page({
     var link = 'http://localhost:8080/api/farmer/addFCOrder';
     var Token = wx.getStorageSync('token');
      //JSON.parse() 方法用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。
-     var myToken = JSON.parse(String(Token));
+     var myToken = "139c2fbebadbd5a7d23baa1933854de84a3516e2c3b6cd8923ae7d40d1da3208807c992e36c3c75f447151d4270b7612"
+
+    var data = JSON.stringify(myBaseOrder);
      wx.request({
        url: link,
       method: 'POST',
-       data:{
-         baseOrder:myBaseOrder
-       },
+       data:data,
        header: {
         'Authorization':myToken,
         'content-type': 'application/json' // 默认值
