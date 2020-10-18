@@ -23,10 +23,10 @@
 								</view>
 								<view class="note">
 									<view class="score">{{item.score}}积分</view>
-									<view class="count">{{unReGarbageChooses[item.id].amount}}{{item.unit}}</view>
+									<view class="count">{{garbageChooses[item.id].amount}}{{item.unit}}</view>
 								</view>
 								<view class="footer" wx:if="{{item.unit=='斤'}}">
-									<input data-id="{{item.id}}" data-name="amount" value="{{unReGarbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChange"></input>斤
+									<input data-id="{{item.id}}" data-name="amount" value="{{garbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChange"></input>斤
 									<button data-id="{{item.id}}" bindtap='addAmount' plain="true">
 										<image class="icon" src="../../images/util/add.png"></image>
 									</button>
@@ -43,7 +43,7 @@
                                     </button> -->
 								</view>
 								<view class="footer" wx:if="{{item.unit=='个'}}">
-									<input data-id="{{item.id}}" data-name="amount" value="{{unReGarbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChange"></input>个
+									<input data-id="{{item.id}}" data-name="amount" value="{{garbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChange"></input>个
 									<button data-id="{{item.id}}" bindtap='addAmount' plain="true">
 										<image class="icon" src="../../images/util/add.png"></image>
 									</button>
@@ -52,7 +52,7 @@
 									</button>
 								</view>
                 	<view class="footer" wx:if="{{item.unit=='节'}}">
-									<input data-id="{{item.id}}" data-name="amount" value="{{unReGarbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChange"></input>个
+									<input data-id="{{item.id}}" data-name="amount" value="{{garbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChange"></input>个
 									<button data-id="{{item.id}}" bindtap='addAmount' plain="true">
 										<image class="icon" src="../../images/util/add.png"></image>
 									</button>
@@ -75,10 +75,10 @@
 								</view>
 								<view class="note">
 									<view class="score">{{item.score}}积分</view>
-									<view class="count">{{unReGarbageChooses[item.id].amount}}{{item.unit}}</view>
+									<view class="count">{{garbageChooses[item.id].amount}}{{item.unit}}</view>
 								</view>
 								<view class="footer" wx:if="{{item.unit=='斤'}}">
-									<input data-id="{{item.id}}" data-name="amount" value="{{unReGarbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChange"></input>斤
+									<input data-id="{{item.id}}" data-name="amount" value="{{garbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChange"></input>斤
 									<button data-id="{{item.id}}" bindtap='addAmount' plain="true">
 										<image class="icon" src="../../images/util/add.png"></image>
 									</button>
@@ -95,7 +95,7 @@
                                     </button> -->
 								</view>
 								<view class="footer" wx:if="{{item.unit=='个'}}">
-									<input data-id="{{item.id}}" data-name="amount" value="{{unReGarbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChange"></input>个
+									<input data-id="{{item.id}}" data-name="amount" value="{{garbageChooses[item.id].amount}}" class="num-input" bindinput="onUnitChange"></input>个
 									<button data-id="{{item.id}}" bindtap='addAmount' plain="true">
 										<image class="icon" src="../../images/util/add.png"></image>
 									</button>

@@ -21,13 +21,9 @@ App({
     ftele: '',
     faddress: '',
     recycleGarbage:[],
-    reGarbageChooses: [],
-    reScore: 0,
     unRecycleGarbage:[],
-    unReGarbageChooses:[],
-    unReScore:0,
     soil:[],
-    soilChooses:[],
-    soilScore:0,
+    garbageChooses:[],
+
   }
 })

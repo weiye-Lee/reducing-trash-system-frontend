@@ -8,7 +8,6 @@ Page({
   data: {
     user: null,
     garbageChooses:[],
-    unReGarbageChooses:[]
   },
   gotoFarmerAppoint: function () {
     wx.navigateTo({
@@ -81,48 +80,58 @@ Page({
           var id = t.plastic[i].id;
           var index = "garbageChooses[" + id + "].garbage";
           var index2 = "garbageChooses[" + id + "].amount";
+          var index3 = "garbageChooses[" + id + "].type";
           that.setData({
             [index]: t.plastic[i],
             [index2]: 0,
+            [index3]:'recycle',
           })
         }
         for (var i = 0; i < b; i++) {
           var id = t.glass[i].id;
           var index = "garbageChooses[" + id + "].garbage";
           var index2 = "garbageChooses[" + id + "].amount";
+          var index3 = "garbageChooses[" + id + "].type";
           that.setData({
             [index]: t.glass[i],
             [index2]: 0,
+            [index3]:'recycle',
           })
         }
         for (var i = 0; i < c; i++) {
           var id = t.paper[i].id;
           var index = "garbageChooses[" + id + "].garbage";
           var index2 = "garbageChooses[" + id + "].amount";
+          var index3 = "garbageChooses[" + id + "].type";
           that.setData({
             [index]: t.paper[i],
             [index2]: 0,
+            [index3]:'recycle',
           })
         }
         for (var i = 0; i < d; i++) {
           var id = t.metal[i].id;
           var index = "garbageChooses[" + id + "].garbage";
           var index2 = "garbageChooses[" + id + "].amount";
+          var index3 = "garbageChooses[" + id + "].type";
           that.setData({
             [index]: t.metal[i],
             [index2]: 0,
+            [index3]:'recycle',
           })
         }
         for (var i = 0; i < e; i++) {
           var id = t.weave[i].id;
           var index = "garbageChooses[" + id + "].garbage";
           var index2 = "garbageChooses[" + id + "].amount";
+          var index3 = "garbageChooses[" + id + "].type";
           that.setData({
             [index]: t.weave[i],
             [index2]: 0,
+            [index3]:'recycle',
           })
         }
-        app.globalData.reGarbageChooses = that.data.garbageChooses;
+        app.globalData.garbageChooses = that.data.garbageChooses;
       },
       fail() {
         console.log("fail");
@@ -146,25 +155,30 @@ Page({
         var a = t.metal.length;
         var b = t.pesticide.length;
         //制造订单数组
+        
         for (var i = 0; i < a; i++) {
           var id = t.metal[i].id;
-          var index = "unReGarbageChooses[" + id + "].garbage";
-          var index2 = "unReGarbageChooses[" + id + "].amount";
+          var index = "garbageChooses[" + id + "].garbage";
+          var index2 = "garbageChooses[" + id + "].amount";
+          var index3 = "garbageChooses[" + id + "].type";
           that.setData({
             [index]: t.metal[i],
             [index2]: 0,
+            [index3]:'unRecycle',
           })
         }
         for (var i = 0; i < b; i++) {
           var id = t.pesticide[i].id;
-          var index = "unReGarbageChooses[" + id + "].garbage";
-          var index2 = "unReGarbageChooses[" + id + "].amount";
+          var index = "garbageChooses[" + id + "].garbage";
+          var index2 = "garbageChooses[" + id + "].amount";
+          var index3 = "garbageChooses[" + id + "].type";
           that.setData({
             [index]: t.pesticide[i],
             [index2]: 0,
+            [index3]:'unRecycle',
           })
         }
-        app.globalData.unReGarbageChooses = that.data.unReGarbageChooses;
+        app.globalData.garbageChooses = that.data.garbageChooses;
         // console.log(that.data.unReGarbageChooses);
       },
       fail() {
@@ -190,15 +204,17 @@ Page({
         //制造订单数组
         for (var i = 0; i < a; i++) {
           var id = t.soil[i].id;
-          var index = "soilChooses[" + id + "].garbage";
-          var index2 = "soilChooses[" + id + "].amount";
+          var index = "garbageChooses[" + id + "].garbage";
+          var index2 = "garbageChooses[" + id + "].amount";
+          var index3 = "garbageChooses[" + id + "].type";
           that.setData({
             [index]: t.soil[i],
             [index2]: 0,
+            [index3]:'soil',
           })
         }
-        app.globalData.soilChooses = that.data.soilChooses;
-        // console.log(that.data.unReGarbageChooses);
+        app.globalData.garbageChooses = that.data.garbageChooses;
+        console.log(that.data.garbageChooses);
       },
       fail() {
         console.log("fail");

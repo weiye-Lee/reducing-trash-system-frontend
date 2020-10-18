@@ -10,7 +10,7 @@ Page({
     currentTab: 0,
     score: 0.0,
     unRecycleGarbage: [],
-    unReGarbageChooses: [],
+    garbageChooses: [],
   },
    /**
    * 垃圾数量的改变,以及对应的积分变化
@@ -20,11 +20,11 @@ Page({
     var that = this;
     var id = event.target.dataset.id;
     var amount = event.target.dataset.name;
-    var index = "unReGarbageChooses[" + id + "]." + amount;
+    var index = "garbageChooses[" + id + "]." + amount;
     this.setData({
       [index]: parseFloat(event.detail.value)
     })
-    var t = that.data.unReGarbageChooses;
+    var t = that.data.garbageChooses;
     var myScore = 0;
     for (var i = 0; i < t.length; i++) {
       if (t[i] != null) {
@@ -38,12 +38,12 @@ Page({
   addAmount(event) {
     var that = this;
     var id = event.target.dataset.id;
-    var amount = parseFloat(this.data.unReGarbageChooses[id].amount) + 1;
-    var index = "unReGarbageChooses[" + id + "].amount";
+    var amount = parseFloat(this.data.garbageChooses[id].amount) + 1;
+    var index = "garbageChooses[" + id + "].amount";
     this.setData({
       [index]: amount
     })
-    var t = that.data.unReGarbageChooses;
+    var t = that.data.garbageChooses;
     var myScore = 0;
     for (var i = 0; i < t.length; i++) {
       if (t[i] != null) {
@@ -57,12 +57,12 @@ Page({
   delAmount(event) {
     var that = this;
     var id = event.target.dataset.id;
-    var amount = parseFloat(this.data.unReGarbageChooses[id].amount) - 1;
-    var index = "unReGarbageChooses[" + id + "].amount";
+    var amount = parseFloat(this.data.garbageChooses[id].amount) - 1;
+    var index = "garbageChooses[" + id + "].amount";
     this.setData({
       [index]: amount
     })
-    var t = that.data.unReGarbageChooses;
+    var t = that.data.garbageChooses;
     var myScore = 0;
     for (var i = 0; i < t.length; i++) {
       if (t[i] != null) {
@@ -77,8 +77,8 @@ Page({
    * 提交订单
    */
   submit() {
-    console.log(this.data.unReGarbageChooses);
-    app.globalData.unReGarbageChooses = this.data.unReGarbageChooses;
+    console.log(this.data.garbageChooses);
+    app.globalData.garbageChooses = this.data.garbageChooses;
     wx.navigateTo({
       url: '../farmerAppointment/farmerAppointment'
     })  
@@ -106,11 +106,10 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    console.log(app.globalData.unReGarbageChooses);
+    console.log(app.globalData.garbageChooses);
     this.setData({
       unRecycleGarbage:app.globalData.unRecycleGarbage,
-      unReGarbageChooses: app.globalData.unReGarbageChooses,
-      score: app.globalData.unReScore,
+      garbageChooses: app.globalData.garbageChooses,
     })
   },
 

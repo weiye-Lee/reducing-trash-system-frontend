@@ -10,10 +10,14 @@ Page({
     name: '',
     tele: '',
     address: '',
-    reGarbageChooses:[],
-    unReGarbageChooses:[],
-    reScore:'',
-    unReScore:''
+    garbageChooses:[],
+    baseOrder:{
+      name:'',
+      phoneNumber:'',
+      address:'',
+      remark:'',
+      garbageChooses:'',
+    }
   },
   gotoFarmerAddressManage() {
     wx.navigateTo({
@@ -35,11 +39,54 @@ Page({
       url: '../farmerSoil/farmerSoil',
     })
   },
+  onRemarkChange(event){
+    this.setData({
+      remark:event.detail
+    })
+  },
   submit(){
-    console.log(this.data.reGarbageChooses);
-    console.log(this.data.unReGarbageChooses);
-    console.log(this.data.soilChooses);
-    
+    var t =  this.data.garbageChooses;
+    console.log(this.data.garbageChooses);
+    var newGarbageChooses = new Array();
+    for(var i=0;i<t.length;i++){
+      if(t[i]!=null&&t[i].amount!=0){
+        delete t[i].type;
+        delete t[i].garbage.category;
+        delete t[i].garbage.name;
+        delete t[i].garbage.score;
+        delete t[i].garbage.type;
+        delete t[i].garbage.unit;
+        newGarbageChooses.push(t[i]);
+      }
+    }
+    console.log(newGarbageChooses);
+    var myBaseOrder ={
+      name:this.data.name,
+      phoneNumber:this.data.tele,
+      address:this.data.address,
+      remark:this.data.remark,
+      garbageChooses:newGarbageChooses,
+    }
+    console.log(myBaseOrder);
+    var link = 'http://localhost:8080/api/farmer/addFCOrder';
+    var Token = wx.getStorageSync('token');
+     //JSON.parse() 方法用来解析JSON字符串，构造由字符串描述的JavaScript值或对象。
+     var myToken = JSON.parse(String(Token));
+     wx.request({
+       url: link,
+      method: 'POST',
+       data:{
+         baseOrder:myBaseOrder
+       },
+       header: {
+        'Authorization':myToken,
+        'content-type': 'application/json' // 默认值
+      },
+      success(res){
+        console.log(res.data)
+      }
+
+     })
   },
 
   /**
@@ -50,14 +97,8 @@ Page({
       name: app.globalData.fname,
       tele: app.globalData.ftele,
       address: app.globalData.faddress,
-      reGarbageChooses: app.globalData.reGarbageChooses,
-      reScore: app.globalData.reScore,
-      unReGarbageChooses:app.globalData.unReGarbageChooses,
-      unReScore:app.globalData.unReScore,
-      soilChooses:app.globalData.soilChooses,
-      soilScore:app.globalData.soilScore,
+      garbageChooses:app.globalData.garbageChooses,
       remark: app.globalData.remark,
-
     })
     // if(options.name!=null){
     //   this.setData({

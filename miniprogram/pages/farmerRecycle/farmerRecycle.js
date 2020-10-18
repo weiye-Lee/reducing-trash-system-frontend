@@ -45,7 +45,7 @@ Page({
     //     }
     //   ]
     // },
-    recycleGarbage: null,
+    recycleGarbage: [],
     garbageChooses: [],
   },
   /**
@@ -114,7 +114,7 @@ Page({
    */
   submit() {
     console.log(this.data.garbageChooses);
-    app.globalData.reGarbageChooses = this.data.garbageChooses;
+    app.globalData.garbageChooses = this.data.garbageChooses;
     wx.navigateTo({
       url: '../farmerAppointment/farmerAppointment'
     })  
@@ -145,11 +145,10 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    console.log(app.globalData.reGarbageChooses);
+    console.log(app.globalData.garbageChooses);
     this.setData({
       recycleGarbage:app.globalData.recycleGarbage,
-      garbageChooses: app.globalData.reGarbageChooses,
-      score: app.globalData.reScore,
+      garbageChooses: app.globalData.garbageChooses,
     })
     // var link = 'http://localhost:8080/api/user/getRecycleGarbage';
     // var Token = wx.getStorageSync('token');
